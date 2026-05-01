@@ -13,7 +13,8 @@ WINTER_PRICE = 2000
 
 # --- 1. ページ構成・接続 ---
 st.set_page_config(page_title="Ski-Fit AI", layout="wide", page_icon="⛄")
-conn = st.connection("gsheets", type=GSheetsConnection)
+conn = st.connection("gsheets", type="st_gsheets_connection.GSheetsConnection")
+
 
 def get_users():
     return conn.read(worksheet="Users", ttl=0)
